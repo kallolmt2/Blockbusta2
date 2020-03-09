@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Blockbusta.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Movie
+        </th>
+        <th>
+            Genre
+        </th>
+    </tr>
+@if (!Model.Any()) {<text>No Movies Found</text> }
+else {
+    foreach (var movie in Model)
+    {
+    <tr>
+        <td>
+            @Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)
+        </td>
+        <td>
+            @movie.Genre.Name
+        </td>
+       
+    </tr>
+    }
+}
+
+</table>

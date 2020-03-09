@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Blockbusta.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Customer
+        </th>
+        <th>Membership Type</th>
+    </tr>
+@if (!Model.Any()) { <text>No customer Found</text>}
+else { 
+    foreach (var customer in Model)
+    {
+         <tr>
+              <td>
+                   @Html.ActionLink(customer.Name, "Details", "Customer", new { id = customer.Id }, null)
+              </td>
+             <td>
+                 @customer.MembershipType.Name
+             </td>
+         </tr>
+        }
+    }
+    @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>*@
+
+
+
+</table>

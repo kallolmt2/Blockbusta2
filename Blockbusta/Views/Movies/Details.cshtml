@@ -1,0 +1,50 @@
+﻿@model Blockbusta.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            Released Date:
+        </dt>
+
+        <dd>
+            @Model.ReleasedDate.Date.ToShortDateString()
+        </dd>
+
+        <dt>
+            Date Added:
+        </dt>
+
+        <dd>
+            @Model.DateAdded.Date.ToShortDateString()
+        </dd>
+
+        <dt>
+            Stock:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
