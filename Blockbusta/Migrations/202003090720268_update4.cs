@@ -3,7 +3,7 @@ namespace Blockbusta.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class GenreAdded : DbMigration
+    public partial class update4 : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,6 @@ namespace Blockbusta.Migrations
             Sql("INSERT INTO Genres (Id, Name) VALUES (3, 'Horror')");
             Sql("INSERT INTO Genres (Id, Name) VALUES (4, 'Romantic')");
             Sql("INSERT INTO Genres (Id, Name) VALUES (5, 'Animated')");
-
         }
         
         public override void Down()
